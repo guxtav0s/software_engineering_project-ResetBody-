@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ResetBody - Cadastro</title>
-  <link rel="stylesheet" href="../css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bem-vindo de volta!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <nav class="navbar">
-    <ul>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-      <li><a href="#">Page 4</a></li>
-      <li><a href="#">Page 5</a></li>
-      <li class="active"><a href="#">Page 6</a></li>
-    </ul>
+
+  <nav class="top-nav">
+    <a href="#">Page 1</a>
+    <a href="#">Page 2</a>
+    <a href="#">Page 3</a>
+    <a href="#">Page 4</a>
+    <a href="#" class="active">Page 5</a>
+    <a href="#">Page 6</a>
   </nav>
 
-  <main class="container">
-    <div class="icon">
-      <!-- Ícone de pessoa andando -->
-      <img src="../assets/walk-icon.png" alt="Ícone caminhada">
+  <div class="blob"></div>
+
+  <div class="content">
+    <div class="icon-circle">
+      <svg viewBox="0 0 24 24"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg>
     </div>
 
-    <h1>Vamos começar juntos!</h1>
-    <p>Crie sua conta e comece a se cuidar hoje</p>
+    <h1>Bem-vindo de volta!</h1>
+    <p class="subtitle">Entre para continuar seus alongamentos</p>
 
-    <form class="form-cadastro">
-      <label for="email">E-mail</label>
-      <input type="email" id="email" placeholder="seuemail@gmail.com" required>
+    <form>
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="seuemail@gmail.com">
+      </div>
 
-      <label for="senha">Senha</label>
-      <input type="password" id="senha" placeholder="Digite sua senha" required>
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="•••••••">
+        <div class="forgot-row">
+          <a href="#">esqueci minha senha</a>
+        </div>
+      </div>
 
-      <label for="confirmar">Confirmar senha</label>
-      <input type="password" id="confirmar" placeholder="Repita sua senha" required>
+      <button type="submit" class="entrar">Entrar</button>
 
-      <button type="submit">Entrar</button>
+      <p class="signup">Não tem uma conta? <strong>Criar agora</strong></p>
     </form>
-  </main>
+  </div>
 
-  <footer>
-    <p>&copy; 2026 ResetBody</p>
-  </footer>
 </body>
 </html>
