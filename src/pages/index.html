@@ -30,7 +30,26 @@
 
     <footer>
         <button class="pref"><img src="../assets/estrela.svg" alt="Preferências">Preferências</button>
-        <button class="intervalo"><img src="../assets/relogio.svg" alt="Intervalo">Intervalo</button>
+        <button class="intervalo" id="openIntervaloModal"><img src="../assets/relogio.svg" alt="Intervalo">Intervalo</button>
     </footer>
+
+    <!-- * Dialogos preferencia e intervalo -->
+
+    <dialog class="modal" id="intervaloModal">
+      
+      <h3>Configurar intervalo</h3>
+      <p>Escolha a duração da pausa (em minutos):</p>
+
+      <input type="number" id="duracaoPausa" min="1" max="60" />
+      <sub>De 1 a 60</sub>
+
+      <div class="modal-footer">
+        <button id="cancelar" class="cancel">Cancelar</button>
+        <button id="salvar" class="save">Salvar</button>
+      </div>
+
+    </dialog>
+
+    <script src="../js/index.js"></script>
 </body>
 </html>

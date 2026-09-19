@@ -17,6 +17,7 @@
   --fundo-verde: #d8e6dc;
   --cor-superficie: #ffffff;
   --cor-principal: #2f6b58;
+  --cor-principal-hover: #265041;
   --cor-titulo: #2b2b2b;
   --cor-texto: #3a3a3a;
   --cor-suave: #8a8a72;
@@ -194,7 +195,7 @@ button.entrar {
 }
 
 button.entrar:hover {
-  background: var(--cor-principal);
+  background: var(--cor-principal-hover);
 }
 
 .signup{
