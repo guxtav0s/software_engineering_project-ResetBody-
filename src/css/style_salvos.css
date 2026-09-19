@@ -1,0 +1,174 @@
+/* ========================================================================== */
+/* Fontes                                                                     */
+/* ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+
+/* ========================================================================== */
+/* Variáveis visuais                                                          */
+/* ========================================================================== */
+:root {
+  --fonte-corpo: "Nunito", sans-serif;
+  --fonte-titulo: "Fraunces", serif;
+
+  --fundo-claro: #fffdf5;
+  --fundo-quente: #fce9b8;
+  --fundo-amarelo: #f9dfa0;
+  --fundo-verde: #d8e6dc;
+  --cor-superficie: #ffffff;
+  --cor-principal: #2f6b58;
+  --cor-principal-hover: #265041;
+  --cor-titulo: #2b2b2b;
+  --cor-texto: #3a3a3a;
+  --cor-suave: #8a8a72;
+  --cor-placeholder: #b9b9b9;
+  --cor-nao-selecionado: #b5a778;
+  --cor-fundo-conta: #3a3220;
+}
+
+/* ========================================================================== */
+/* Reset                                                                      */
+/* ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* ========================================================================== */
+/* Fundo da página                                                            */
+/* ========================================================================== */
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  min-height: 100vh;
+  background: linear-gradient(
+    120deg,
+    var(--fundo-claro) 0%,
+    var(--fundo-quente) 45%,
+    var(--fundo-amarelo) 70%,
+    var(--fundo-verde) 100%
+  );
+  position: relative;
+}
+
+/* Forma decorativa do fundo */
+.blob {
+  position: absolute;
+  right: -140px;
+  bottom: -160px;
+  z-index: 0;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #dcecd8, #cfe3e0 60%, #c9dfe6);
+  opacity: 0.85;
+}
+
+/* ========================================================================== */
+/* Abas de navegação                                                          */
+/* ========================================================================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
+  margin: 55px 50px 0;
+}
+
+.aba {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.aba a {
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.aba p {
+  text-decoration: underline;
+  text-decoration-color: var(--cor-principal);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.aba a:hover {
+  transform: translateY(-2px);
+}
+
+.conta {
+  background: var(--cor-fundo-conta);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* ========================================================================== */
+/* Marca e tipografia                                                         */
+/* ========================================================================== */
+h1 {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: left;
+  color: var(--cor-titulo);
+  margin-bottom: 10px;
+  margin-top: auto;
+}
+
+.subtitle {
+  text-align: left;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--cor-suave);
+  font-size: 16px;
+  margin-bottom: 44px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--cor-nao-selecionado);
+  font-weight: 600;
+}
+
+/* ========================================================================== */
+/* Layout principal                                                           */
+/* ========================================================================== */
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin: 70px auto 0;
+  padding: 0 70px;
+}
+
+.content button {
+  font-family: var(--fonte-corpo);
+  font-size: 16px;
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  text-decoration-color: var(--cor-principal);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  color: var(--cor-principal);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform: translateY(0);
+}
+
+.content button:hover {
+  transform: translateY(-3px);
+}
+
+/* ! criar decoração de abas de rotinas */
