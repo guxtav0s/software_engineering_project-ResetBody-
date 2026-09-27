@@ -103,15 +103,6 @@ nav {
   transform: translateY(-2px);
 }
 
-.conta img {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
 /* ========================================================================== */
 /* Marca e tipografia                                                         */
 /* ========================================================================== */
@@ -120,19 +111,18 @@ h1 {
   font-style: italic;
   font-weight: 600;
   font-size: 32px;
-  text-align: left;
+  text-align: center;
   color: var(--cor-titulo);
   margin-bottom: 10px;
   margin-top: auto;
 }
 
 .subtitle {
-  text-align: left;
+  text-align: center;
   font-style: italic;
   font-weight: 400;
   color: var(--cor-suave);
   font-size: 16px;
-  margin-bottom: 44px;
 }
 
 a {
@@ -141,33 +131,81 @@ a {
   font-weight: 600;
 }
 
-/* ========================================================================== */
-/* Layout principal                                                           */
-/* ========================================================================== */
-.content {
-  display: flex;
-  justify-content: space-between;
-  margin: 70px auto 0;
-  padding: 0 70px;
+h3 {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: left;
+  color: var(--cor-titulo);
+  margin-bottom: 10px;
 }
 
-.content button {
+dialog p {
   font-family: var(--fonte-corpo);
-  font-size: 16px;
-  border: none;
-  background: transparent;
-  text-decoration: underline;
-  text-decoration-color: var(--cor-principal);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
-  color: var(--cor-principal);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  transform: translateY(0);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+  color: var(--cor-texto);
+  margin-bottom: 10px;
 }
 
-.content button:hover {
-  transform: translateY(-3px);
+sub {
+  font-family: var(--fonte-corpo);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: left;
+  color: var(--cor-suave);
 }
 
-/* ! criar decoração de abas de rotinas */
+.alt{
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14.5px;
+  color: var(--cor-suave);
+}
+
+/* ========================================================================== */
+/* Conteudo                                                                   */
+/* ========================================================================== */
+.alinhar{
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.content{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  padding: 12%;
+  background-color: rgba(255,255,255,0.35);
+  border-radius: 8px;
+  box-shadow: #2b2b2b;
+  width: 50%;
+}
+
+hr{
+  margin: 2rem;
+  border-color: var(--cor-principal);
+}
+
+/* ========================================================================== */
+/* Informações da conta                                                       */
+/* ========================================================================== */
+.conta{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+img{
+  width: 90px;
+  border-radius: 50%;
+}
+
+/* ========================================================================== */
+/* Configuração                                                               */
+/* ========================================================================== */
