@@ -1,6 +1,7 @@
 const express = require('express');
 const webpush = require('web-push');
 const path = require('path');
+const db = require("./database/database");
 require('dotenv').config();
 
 const app = express();
