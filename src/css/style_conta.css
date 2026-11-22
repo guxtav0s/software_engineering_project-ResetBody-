@@ -1,66 +1,38 @@
-/* ========================================================================== */
-/* Fontes                                                                     */
-/* ========================================================================== */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
 
-/* ========================================================================== */
-/* Variáveis visuais                                                          */
-/* ========================================================================== */
 :root {
   --fonte-corpo: "Nunito", sans-serif;
   --fonte-titulo: "Fraunces", serif;
-
   --fundo-claro: #fffdf5;
   --fundo-quente: #fce9b8;
   --fundo-amarelo: #f9dfa0;
   --fundo-verde: #d8e6dc;
-  --cor-superficie: #ffffff;
   --cor-principal: #2f6b58;
   --cor-principal-hover: #265041;
   --cor-titulo: #2b2b2b;
   --cor-texto: #3a3a3a;
-  --cor-suave: #8a8a72;
-  --cor-placeholder: #b9b9b9;
+  --cor-suave: #85836f;
   --cor-nao-selecionado: #b5a778;
-  --cor-fundo-conta: #3a3220;
+  --marrom: #76583d;
+  --marrom-escuro: #59412e;
+  --marrom-claro: #eee3d4;
 }
 
-/* ========================================================================== */
-/* Reset                                                                      */
-/* ========================================================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  max-width: 100%;
-}
-
-/* ========================================================================== */
-/* Fundo da página                                                            */
-/* ========================================================================== */
-html,
-body {
-  height: 100%;
-  overflow: hidden;
-}
-
-body {
-  font-family: var(--fonte-corpo);
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body.account-page {
   min-height: 100vh;
-  background: linear-gradient(
-    120deg,
-    var(--fundo-claro) 0%,
-    var(--fundo-quente) 45%,
-    var(--fundo-amarelo) 70%,
-    var(--fundo-verde) 100%
-  );
+  margin: 0;
+  overflow-x: hidden;
+  font-family: var(--fonte-corpo);
+  color: var(--cor-texto);
+  background: linear-gradient(120deg, var(--fundo-claro) 0%, var(--fundo-quente) 45%, var(--fundo-amarelo) 70%, var(--fundo-verde) 100%);
   position: relative;
 }
 
-/* Forma decorativa do fundo */
 .blob {
-  position: absolute;
+  position: fixed;
   right: -140px;
   bottom: -160px;
   z-index: 0;
@@ -68,144 +40,196 @@ body {
   height: 480px;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #dcecd8, #cfe3e0 60%, #c9dfe6);
-  opacity: 0.85;
+  opacity: .85;
+  pointer-events: none;
 }
 
-/* ========================================================================== */
-/* Abas de navegação                                                          */
-/* ========================================================================== */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 24px;
-  margin: 55px 50px 0;
+.account-layout {
+  position: relative;
+  z-index: 1;
+  width: min(1000px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 142px 0 54px;
 }
 
-.aba {
+.account-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: minmax(220px, .78fr) 1px minmax(0, 1.5fr);
+  align-items: stretch;
+  gap: clamp(26px, 4vw, 54px);
+  padding: clamp(28px, 4.5vw, 52px);
+  border: 1px solid rgba(118, 88, 61, .12);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .72);
+  box-shadow: 0 18px 48px rgba(72, 67, 48, .09);
+  backdrop-filter: blur(8px);
 }
 
-.aba a {
-  transform: translateY(0);
-  transition: transform 0.3s ease;
-}
-
-.aba p {
-  text-decoration: underline;
-  text-decoration-color: var(--cor-principal);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
-}
-
-.aba a:hover {
-  transform: translateY(-2px);
-}
-
-/* ========================================================================== */
-/* Marca e tipografia                                                         */
-/* ========================================================================== */
-h1 {
-  font-family: var(--fonte-titulo);
-  font-style: italic;
-  font-weight: 600;
-  font-size: 32px;
-  text-align: center;
-  color: var(--cor-titulo);
-  margin-bottom: 10px;
-  margin-top: auto;
-}
-
-.subtitle {
-  text-align: center;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--cor-suave);
-  font-size: 16px;
-}
-
-a {
-  text-decoration: none;
-  color: var(--cor-nao-selecionado);
-  font-weight: 600;
-}
-
-h3 {
-  font-family: var(--fonte-titulo);
-  font-style: italic;
-  font-weight: 600;
-  font-size: 20px;
-  text-align: left;
-  color: var(--cor-titulo);
-  margin-bottom: 10px;
-}
-
-dialog p {
-  font-family: var(--fonte-corpo);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  text-align: left;
-  color: var(--cor-texto);
-  margin-bottom: 10px;
-}
-
-sub {
-  font-family: var(--fonte-corpo);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  text-align: left;
-  color: var(--cor-suave);
-}
-
-.alt{
-  text-align: center;
-  margin-top: 22px;
-  font-size: 14.5px;
-  color: var(--cor-suave);
-}
-
-/* ========================================================================== */
-/* Conteudo                                                                   */
-/* ========================================================================== */
-.alinhar{
-  display: flex;
-  justify-content: center;
-  margin-top: 5rem;
-}
-
-.content{
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  padding: 12%;
-  background-color: rgba(255,255,255,0.35);
-  border-radius: 8px;
-  box-shadow: #2b2b2b;
-  width: 50%;
-}
-
-hr{
-  margin: 2rem;
-  border-color: var(--cor-principal);
-}
-
-/* ========================================================================== */
-/* Informações da conta                                                       */
-/* ========================================================================== */
-.conta{
+.account-profile {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  text-align: center;
 }
-
-img{
-  width: 90px;
+.profile-photo-wrap {
+  width: 112px;
+  height: 112px;
+  margin-bottom: 22px;
+  padding: 5px;
+  border: 2px solid rgba(118, 88, 61, .32);
   border-radius: 50%;
+  background: #fffaf2;
+  box-shadow: 0 8px 22px rgba(89, 65, 46, .10);
+}
+.profile-photo-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.account-eyebrow {
+  margin: 0 0 9px;
+  color: var(--marrom);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.7px;
+}
+.account-profile h1 {
+  margin: 0 0 5px;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  font-size: clamp(28px, 3vw, 36px);
+  font-style: italic;
+  font-weight: 600;
+}
+.account-profile .subtitle {
+  margin: 0;
+  color: var(--cor-suave);
+  font-size: 14px;
+}
+.alt {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 46px;
+  margin-top: 27px;
+  padding: 0 24px;
+  border: 1px solid var(--marrom);
+  border-radius: 999px;
+  background: var(--marrom);
+  color: #fffaf3;
+  font: 800 14px var(--fonte-corpo);
+  letter-spacing: .15px;
+  cursor: pointer;
+  box-shadow: 0 7px 16px rgba(89, 65, 46, .18);
+  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+.alt:hover {
+  transform: translateY(-2px);
+  background: var(--marrom-escuro);
+  box-shadow: 0 10px 20px rgba(89, 65, 46, .23);
+}
+.alt:focus-visible { outline: 3px solid rgba(118, 88, 61, .3); outline-offset: 3px; }
+.account-note {
+  max-width: 220px;
+  margin: 12px 0 0;
+  color: var(--cor-suave);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.account-divider {
+  width: 1px;
+  min-height: 100%;
+  background: linear-gradient(180deg, transparent, var(--cor-principal) 12%, var(--cor-principal) 88%, transparent);
+  opacity: .75;
+}
+.account-information { min-width: 0; }
+.account-information h2 {
+  margin: 0;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  font-size: clamp(23px, 2.7vw, 30px);
+  font-weight: 600;
+}
+.info-intro {
+  margin: 8px 0 24px;
+  color: var(--cor-suave);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 17px;
+}
+.info-icon {
+  display: grid;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--marrom-claro);
+  color: var(--marrom-escuro);
+  font-size: 11px;
+  font-weight: 900;
+}
+.info-item h3 {
+  margin: 0 0 4px;
+  color: #514333;
+  font-size: 14px;
+  font-weight: 900;
+}
+.info-item p {
+  margin: 0;
+  color: #777365;
+  font-size: 12px;
+  line-height: 1.55;
+}
+.account-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 25px;
+  padding: 13px 15px;
+  border: 1px solid rgba(47, 107, 88, .12);
+  border-radius: 13px;
+  background: rgba(216, 230, 220, .48);
+}
+.account-tip span { color: var(--cor-principal); font-size: 17px; line-height: 1; }
+.account-tip p { margin: 0; color: #52675a; font-size: 11px; line-height: 1.5; }
+
+
+/* Mantém a navegação da Conta na mesma linha vertical das demais páginas. */
+body.account-page > nav {
+  position: relative !important;
+  top: 0 !important;
+  transform: none !important;
+  margin-top: 42px !important;
 }
 
-/* ========================================================================== */
-/* Configuração                                                               */
-/* ========================================================================== */
+@media (max-width: 700px) {
+  body.account-page > nav { margin-top: 24px !important; }
+  .account-layout { width: min(560px, calc(100% - 28px)); padding-top: 100px; }
+  .account-card { grid-template-columns: 1fr; gap: 24px; padding: 26px 22px; }
+  .account-divider {
+    width: 100%;
+    min-height: 1px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cor-principal) 12%, var(--cor-principal) 88%, transparent);
+  }
+  .account-profile { padding-bottom: 2px; }
+  .account-information h2 { font-size: 25px; }
+}
+@media (max-width: 380px) {
+  .account-layout { padding-top: 92px; }
+  .account-card { padding: 22px 17px; }
+  .alt { width: 100%; padding: 0 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .alt { transition: none; }
+}

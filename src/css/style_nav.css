@@ -1,0 +1,104 @@
+/* Navegação global: estrutura e aparência compartilhadas por todas as páginas. */
+body nav {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: auto;
+  margin: 42px 50px 0;
+  padding: 0 24px;
+}
+
+body nav .aba,
+body nav .nav-direita {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 22px;
+}
+
+body nav .aba a,
+body nav .nav-direita > a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--cor-nao-selecionado, #b5a778);
+  font-family: var(--fonte-corpo, "Nunito", sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+body nav .aba a:hover,
+body nav .nav-direita > a:hover {
+  color: var(--cor-principal, #2f6b58);
+  transform: translateY(-2px);
+}
+
+body nav .pagina-atual {
+  display: inline-flex;
+  align-items: center;
+  color: var(--cor-principal, #2f6b58);
+  font-family: var(--fonte-corpo, "Nunito", sans-serif);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-decoration-color: var(--cor-principal, #2f6b58);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  white-space: nowrap;
+}
+
+body nav .conta img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 650px) {
+  body nav {
+    margin: 24px 14px 0;
+    padding: 0 8px;
+    gap: 12px;
+  }
+
+  body nav .aba,
+  body nav .nav-direita {
+    gap: 13px;
+  }
+
+  body nav .aba a,
+  body nav .nav-direita > a,
+  body nav .pagina-atual {
+    font-size: 13px;
+  }
+
+  body nav .conta img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 380px) {
+  body nav { margin-right: 8px; margin-left: 8px; padding: 0 4px; gap: 8px; }
+  body nav .aba, body nav .nav-direita { gap: 8px; }
+  body nav .aba a, body nav .nav-direita > a, body nav .pagina-atual { font-size: 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body nav .aba a,
+  body nav .nav-direita > a { transition: none; }
+}
+

@@ -1,0 +1,61 @@
+/* A página Pomodoro ocupa a janela inteira e mantém o conteúdo centralizado. */
+html, body.pomodoro-page {
+  width: 100%; height: 100%; min-height: 0; overflow: hidden;
+}
+.pomodoro-page { min-height: 100vh; height: 100vh; display: flex; flex-direction: column; }
+.pomodoro-page .blob { position: fixed; pointer-events: none; }
+.pomodoro-page nav { flex: 0 0 auto; }
+.pomodoro-content {
+  position: relative; z-index: 1; width: min(760px, calc(100% - 32px));
+  flex: 1 1 auto; min-height: 0; margin: 0 auto; padding: 12px 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+}
+.pomodoro-content h1 { margin: 0 0 5px; }
+.pomodoro-content .subtitle { margin: 0 0 clamp(10px, 2vh, 20px); }
+.pomodoro-card {
+  width: min(560px, 100%); max-height: 100%; overflow-y: auto; scrollbar-width: thin;
+  margin: 0 auto; padding: clamp(14px, 2.5vh, 26px) clamp(16px, 4vw, 36px);
+  border: 1px solid rgba(47,107,88,.14); border-radius: 28px;
+  background: rgba(255,255,255,.82); box-shadow: 0 16px 45px rgba(53,75,60,.10);
+}
+.phase-label { color: var(--cor-principal); font-size: 18px; font-weight: 800; letter-spacing: .04em; }
+.pomodoro-clock { margin: 8px 0 2px; color: var(--cor-principal); font-family: var(--fonte-titulo); font-size: clamp(58px, 11vh, 96px); line-height: 1.05; font-variant-numeric: tabular-nums; }
+.pomodoro-status { min-height: 22px; color: var(--cor-suave); font-size: 14px; }
+.pomodoro-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.pomodoro-actions button, .pomodoro-save { border: 0; border-radius: 999px; padding: 11px 22px; font: 700 15px var(--fonte-corpo); cursor: pointer; transition: transform .25s ease, background-color .25s ease, color .25s ease; }
+.pomodoro-actions button:hover, .pomodoro-save:hover { transform: translateY(-2px); }
+.pomodoro-primary, .pomodoro-save { color: white; background: var(--cor-principal); }
+.pomodoro-primary:hover, .pomodoro-save:hover { background: var(--cor-principal-hover); }
+.pomodoro-secondary { color: var(--cor-principal); background: #e8f0e9; }
+.push-settings { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin: 10px 0 12px; }
+.push-settings span { max-width: 420px; color: #68756d; font-size: .82rem; text-align: center; }
+#enableNotificationsBtn:disabled { opacity: .65; cursor: default; }
+.pomodoro-settings { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: left; padding-top: 14px; border-top: 1px solid #e7e9df; }
+.pomodoro-settings label { display: flex; flex-direction: column; gap: 6px; color: var(--cor-texto); font-size: 14px; font-weight: 700; }
+.pomodoro-settings input { width: 100%; padding: 9px 11px; border: 1px solid #d7dfd7; border-radius: 10px; background: #fff; color: var(--cor-titulo); font: 600 16px var(--fonte-corpo); }
+.pomodoro-settings input:focus { outline: 2px solid rgba(47,107,88,.25); border-color: var(--cor-principal); }
+.pomodoro-save { grid-column: 1 / -1; justify-self: center; min-width: 180px; }
+.pomodoro-hint { margin-top: 10px; color: var(--cor-suave); font-size: 12px; line-height: 1.4; }
+@media (max-width: 600px) {
+  .pomodoro-content { width: calc(100% - 20px); padding: 8px 0; }
+  .pomodoro-content h1 { font-size: 26px; }
+  .pomodoro-content .subtitle { font-size: 13px; margin-bottom: 8px; }
+  .pomodoro-card { padding: 14px 12px; border-radius: 20px; }
+  .pomodoro-settings { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .pomodoro-actions { gap: 8px; margin: 10px 0; }
+  .pomodoro-actions button, .pomodoro-save { padding: 9px 14px; font-size: 13px; }
+}
+@media (max-height: 680px) {
+  .pomodoro-content { padding: 4px 0; }
+  .pomodoro-content h1 { font-size: 24px; }
+  .pomodoro-content .subtitle { margin-bottom: 6px; font-size: 12px; }
+  .pomodoro-card { padding-top: 10px; padding-bottom: 10px; }
+  .pomodoro-clock { font-size: clamp(46px, 9vh, 68px); }
+  .pomodoro-actions { margin: 7px 0; }
+  .push-settings { margin: 5px 0 7px; }
+  .pomodoro-hint { margin-top: 6px; font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pomodoro-actions button, .pomodoro-save { transition: none; }
+}

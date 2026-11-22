@@ -5,20 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salvos</title>
     <link rel="stylesheet" href="../css/style_salvos.css" />
+    <link rel="stylesheet" href="../css/style_nav.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com">
   </head>
   <body>
     <div class="blob"></div>
 
-    <nav>
+    <nav aria-label="Navegação principal">
       <div class="aba">
         <a href="index.html">Sortear</a>
-        <p>Salvos</p>
+        <span class="pagina-atual" aria-current="page">Salvos</span>
+        <a href="pomodoro.html">Pomodoro</a>
       </div>
-
-      <a href="conta.html"
-        ><div class="conta"><img src="../assets/foto_perfil.png" alt="FotoConta" /></div
-      ></a>
+      <div class="nav-direita">
+        <a class="link-conquistas" href="conquistas.html">Conquistas</a>
+        <a href="conta.html" aria-label="Minha conta">
+          <span class="conta"><img src="../assets/foto_perfil.png" alt="Foto de perfil" /></span>
+        </a>
+      </div>
     </nav>
 
     <div class="content">

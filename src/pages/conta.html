@@ -1,39 +1,78 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conta</title>
     <link rel="stylesheet" href="../css/style_conta.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com" />
+      <link rel="stylesheet" href="../css/style_nav.css" />
   </head>
 
-  <body>
+  <body class="account-page">
     <div class="blob"></div>
 
-    <nav>
+    <nav aria-label="Navegação principal">
       <div class="aba">
         <a href="index.html">Sortear</a>
         <a href="salvos.html">Salvos</a>
+        <a href="pomodoro.html">Pomodoro</a>
+      </div>
+      <div class="nav-direita">
+        <a class="link-conquistas" href="conquistas.html">Conquistas</a>
       </div>
     </nav>
     
-    <div class="alinhar">
-      <div class="content">
-        <div class="conta">
-          <img src="../assets/foto_perfil.png" alt="FotoConta" />
-          <h1>Nome</h1>
+    <main class="account-layout" aria-labelledby="account-title">
+      <section class="account-card" aria-label="Dados da conta">
+        <div class="account-profile">
+          <div class="profile-photo-wrap">
+            <img src="../assets/foto_perfil.png" alt="Foto de perfil" />
+          </div>
+          <p class="account-eyebrow">SEU ESPAÇO NO RESETBODY</p>
+          <h1 id="account-title">Nome</h1>
           <p class="subtitle">seu@email.com</p>
-          <p class="alt">alterar</p>
-        
+          <button class="alt" type="button">Alterar dados da conta</button>
+          <p class="account-note">Mantenha seus dados sempre atualizados.</p>
         </div>
-        
-        <hr />
-        
-        <div class="config">
 
-        </div>
-      </div>
-    </div>
+        <div class="account-divider" role="presentation"></div>
+
+        <section class="account-information" aria-labelledby="info-title">
+          <p class="account-eyebrow">INFORMAÇÕES IMPORTANTES</p>
+          <h2 id="info-title">Cuide também da sua conta</h2>
+          <p class="info-intro">Algumas dicas para aproveitar o ResetBody com tranquilidade:</p>
+
+          <article class="info-item">
+            <span class="info-icon" aria-hidden="true">01</span>
+            <div>
+              <h3>Mantenha seus dados atualizados</h3>
+              <p>Confira se o e-mail associado à sua conta está correto para facilitar a identificação do seu perfil.</p>
+            </div>
+          </article>
+
+          <article class="info-item">
+            <span class="info-icon" aria-hidden="true">02</span>
+            <div>
+              <h3>Proteja suas informações</h3>
+              <p>Não compartilhe sua senha e prefira uma combinação forte e exclusiva para sua conta.</p>
+            </div>
+          </article>
+
+          <article class="info-item">
+            <span class="info-icon" aria-hidden="true">03</span>
+            <div>
+              <h3>Acompanhe sua rotina</h3>
+              <p>Use as atividades salvas, o Pomodoro e as conquistas para organizar suas pausas e acompanhar sua constância.</p>
+            </div>
+          </article>
+
+          <div class="account-tip">
+            <span aria-hidden="true">✦</span>
+            <p>Pequenas pausas e hábitos consistentes fazem parte de uma rotina mais equilibrada.</p>
+          </div>
+        </section>
+      </section>
+    </main>
   </body>
 </html>

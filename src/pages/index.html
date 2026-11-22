@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ResetBody</title>
     <link rel="stylesheet" href="../css/style_index.css" />
+    <link rel="stylesheet" href="../css/style_nav.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com" />
   </head>
 
   <body>
     <div class="blob"></div>
 
-    <nav>
+    <nav aria-label="Navegação principal">
       <div class="aba">
-        <p>Sortear</p>
+        <span class="pagina-atual" aria-current="page">Sortear</span>
         <a href="salvos.html">Salvos</a>
+        <a href="pomodoro.html">Pomodoro</a>
       </div>
-
-      <a href="conta.html">
-        <div class="conta"><img src="../assets/foto_perfil.png" alt="FotoConta" /></div>
-      </a>
+      <div class="nav-direita">
+        <a class="link-conquistas" href="conquistas.html">Conquistas</a>
+        <a href="conta.html" aria-label="Minha conta">
+          <span class="conta"><img src="../assets/foto_perfil.png" alt="Foto de perfil" /></span>
+        </a>
+      </div>
     </nav>
 
     <div class="content">
@@ -28,7 +32,8 @@
 
       <!-- todo: Botão de sorteio: mudar conforme preferência do usuário -->
       <div class="botao-fundo">
-        <button class="sortear">15:00</button>
+        <button class="sortear" id="contador" type="button" aria-label="Pausar ou retomar o contador">15:00</button>
+        <p class="timer-status" id="timerStatus" aria-live="polite">Contagem pronta · clique no contador para começar.</p>
       </div>
     </div>
 
@@ -37,9 +42,11 @@
         <img src="../assets/estrela.svg" alt="Preferências" />Preferências
       </button>
       <button class="intervalo" id="openIntervaloModal">
-        <img src="../assets/relogio.svg" alt="Intervalo" />Intervalo
+        <img src="../assets/relogio.svg" alt="" />Intervalo
       </button>
+      <button class="notificacoes" id="ativarNotificacoesSortear" type="button">Ativar notificações</button>
     </footer>
+    <p class="notification-status" id="notificationStatus" role="status" aria-live="polite"></p>
 
     <!-- * Dialogos preferencia e intervalo -->
 
@@ -49,7 +56,7 @@
       <h3>Configurar intervalo</h3>
       <p>Escolha a duração da pausa (em minutos):</p>
 
-      <input type="number" id="duracaoPausa" min="1" max="60" />
+      <input type="number" id="duracaoPausa" min="1" max="60" value="15" required />
       <sub>De 1 a 60</sub>
 
       <div class="modal-footer">

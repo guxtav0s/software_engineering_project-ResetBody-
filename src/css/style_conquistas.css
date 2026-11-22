@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+
+:root {
+  --fonte-corpo: "Nunito", sans-serif;
+  --fonte-titulo: "Fraunces", serif;
+  --fundo-claro: #fffdf5;
+  --fundo-quente: #fce9b8;
+  --fundo-amarelo: #f9dfa0;
+  --fundo-verde: #d8e6dc;
+  --cor-principal: #2f6b58;
+  --cor-principal-hover: #265041;
+  --cor-titulo: #2b2b2b;
+  --cor-texto: #3a3a3a;
+  --cor-suave: #8a8a72;
+  --cor-nao-selecionado: #b5a778;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: var(--fonte-corpo);
+  color: var(--cor-texto);
+  background: linear-gradient(120deg, var(--fundo-claro) 0%, var(--fundo-quente) 45%, var(--fundo-amarelo) 70%, var(--fundo-verde) 100%);
+  position: relative;
+}
+.blob {
+  position: fixed; right: -140px; bottom: -160px; z-index: 0;
+  width: 480px; height: 480px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #dcecd8, #cfe3e0 60%, #c9dfe6);
+  opacity: .85; pointer-events: none;
+}
+.content { position: relative; z-index: 1; width: min(960px, calc(100% - 40px)); margin: 48px auto 60px; }
+.cabecalho { text-align: center; margin-bottom: 28px; }
+.etiqueta { color: var(--cor-principal); font-size: 11px; font-weight: 800; letter-spacing: 2px; margin-bottom: 7px; }
+h1 { color: var(--cor-titulo); font-family: var(--fonte-titulo); font-size: clamp(30px, 4vw, 40px); font-style: italic; font-weight: 600; }
+.subtitle { color: var(--cor-suave); font-size: 16px; font-style: italic; margin-top: 5px; }
+.resumo {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 22px; margin-bottom: 20px;
+  border: 1px solid rgba(47, 107, 88, .12); border-radius: 16px;
+  background: rgba(255, 255, 255, .58); box-shadow: 0 8px 24px rgba(43, 43, 43, .05);
+}
+.resumo-icone { display: grid; place-items: center; flex: 0 0 44px; height: 44px; border-radius: 14px; background: #f8e8b9; color: #8b7130; font-size: 25px; }
+.resumo strong { color: var(--cor-titulo); font-size: 15px; }
+.resumo p { margin-top: 2px; color: var(--cor-suave); font-size: 13px; }
+.contador { margin-left: auto; color: var(--cor-principal); font-size: 13px; font-weight: 800; white-space: nowrap; }
+.grade-conquistas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.conquista {
+  display: flex; align-items: flex-start; gap: 15px; min-height: 150px;
+  padding: 20px; border: 1px solid rgba(47, 107, 88, .10); border-radius: 16px;
+  background: rgba(255, 255, 255, .68); box-shadow: 0 8px 24px rgba(43, 43, 43, .045);
+}
+.icone-conquista { display: grid; place-items: center; flex: 0 0 54px; height: 54px; border-radius: 16px; background: #f3edda; font-size: 27px; }
+.detalhes { flex: 1; min-width: 0; }
+.titulo-conquista { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+h2 { color: var(--cor-titulo); font-family: var(--fonte-titulo); font-size: 18px; font-weight: 600; }
+.status { flex-shrink: 0; padding: 3px 8px; border-radius: 20px; background: #efeee8; color: #888675; font-size: 10px; font-weight: 800; }
+.detalhes p { min-height: 40px; margin-top: 7px; color: var(--cor-suave); font-size: 12px; line-height: 1.5; }
+.progresso { height: 6px; overflow: hidden; margin-top: 12px; border-radius: 10px; background: #e9e7dc; }
+.progresso span { display: block; height: 100%; border-radius: inherit; background: var(--cor-principal); }
+.detalhes small { display: block; margin-top: 6px; color: #8a8a72; font-size: 11px; }
+.observacao { margin-top: 18px; color: var(--cor-suave); font-size: 11px; text-align: center; }
+@media (max-width: 650px) {
+  .content { margin-top: 38px; }
+  .grade-conquistas { grid-template-columns: 1fr; }
+  .resumo { align-items: flex-start; padding: 15px; }
+  .contador { font-size: 11px; }
+  .conquista { padding: 16px; }
+}

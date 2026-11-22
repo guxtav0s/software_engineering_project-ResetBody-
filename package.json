@@ -1,0 +1,9 @@
+{
+  "name": "resetbody",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ResetBody com notificações Web Push para o Pomodoro",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "dev": "node server.js", "vapid": "web-push generate-vapid-keys" },
+  "dependencies": { "dotenv": "^16.4.7", "express": "^4.21.2", "web-push": "^3.6.7" }
+}
